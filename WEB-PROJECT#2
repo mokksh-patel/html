@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+ 
+  ul {
+    border: 1px solid #fd8700;
+    text-align: middle;
+    padding: 10px;
+  }
+ 
+  dl {
+    border: 1px solid #12f8bc;
+    text-align: middle;
+    padding: 10px;
+  }
+ 
+  ol {
+    border: 1px solid #fd009b;
+    text-align: middle;
+    padding: 10px;
+  }
+ 
+  h1 {
+    border: 1px solid #04bcff;
+    text-align: middle;
+    padding: 8px;
+  }
+ 
+  body {
+    border: 1px solid #adf812;
+    text-align: middle;
+    padding: 8px;
+  }
+ 
+  h1:nth-child(even) {
+    background-color: #1a7a70;
+  }
+</style>
+</head>
+<body style="background-color:grey;">
+ 
+  <h1 style="color:powderblue;background-color:darkblue;">Day:1 Introduction to Web Design</h1>
+ 
+  <ul>
+    <h2 style="color:tomato;background-color:gold;">Topics Covered</h2>
+    <li style="background-color:orange;">What is web design</li>
+    <li style="background-color:orange;">Importance of UI (User Interface) and UX (User Experience)</li>
+    <li style="background-color:orange;">Overview of popular design tools (e.g., Figma, Adobe XD)</li>
+  </ul>
+ 
+  <ol>
+    <h2 style="color:pink;background-color:indigo;">Activities</h2>
+    <li style="color:tomato;background-color:purple;">Introduction to the internship program and goals</li>
+    <li style="color:tomato;background-color:purple;">Discussion on the role of web design in creating user-friendly experiences</li>
+  </ol>
+ 
+  <dl>
+    <h2 style="color:limegreen;background-color:darkgreen;">Reading Material</h2>
+    <dt style="color:limegreen;background-color:green;">The Difference Between UX and UI Design</dt>
+    <dt style="color:limegreen;background-color:green;">Introduction to Figma</dt>
+  </dl>
+ 
+  <p style="color:gold;font-size:30px;">youtube tuturials for task given</p>
+  <a style="font-size:40px;" href="https://www.youtube.com/watch?v=MDLn5-zSQQI">basics of html</a>
+ 
+</body>
+</html>
