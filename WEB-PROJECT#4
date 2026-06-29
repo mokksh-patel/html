@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+ 
+    <style>
+        /* General Styles */
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+ 
+        * {
+            box-sizing: border-box;
+        }
+ 
+        /* Background Image Slideshow */
+        .bg-image {
+            /* Full height */
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            opacity: 0; /* Initially hidden */
+            transition: opacity 1s ease-in-out;
+        }
+ 
+        .bg-image.img1 { background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600'); }
+        .bg-image.img2 { background-image: url('https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=1600'); }
+        .bg-image.img3 { background-image: url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=1600'); }
+        .bg-image.img4 { background-image: url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1600'); }
+        .bg-image.img5 { background-image: url('https://images.unsplash.com/photo-1590959651373-a3db0f38a961?w=1600'); }
+        .bg-image.img6 { background-image: url('https://images.unsplash.com/photo-1572983114279-fc04691e9d8a?w=1600'); }
+ 
+        /* Hero Slider Styles */
+        .hero-slider {
+            width: 100%; /* Adjust width as needed */
+            margin: 0 auto; /* Center horizontally */
+            z-index: 1; /* Above background images */
+        }
+ 
+        .hero-slider .slide {
+            height: 100vh;
+        }
+ 
+        /* Styling navigation arrows */
+        .slick-prev, .slick-next {
+            font-size: 24px;
+            color: grey;
+        }
+ 
+        /* Styling dots navigation */
+        .slick-dots li button {
+            font-size: 16px;
+        }
+ 
+        /* Text Overlay Styles */
+        .bg-text {
+            background-color: rgba(0,0,0,0.4); /* Black w/opacity/see-through */
+            color: white;
+            font-weight: bold;
+            font-size: 80px;
+            border: 10px solid #f1f1f1;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            padding: 20px 40px;
+            z-index: 2;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+ 
+    <!-- Background image layers, cycled by JS -->
+    <div class="bg-image img1"></div>
+    <div class="bg-image img2"></div>
+    <div class="bg-image img3"></div>
+    <div class="bg-image img4"></div>
+    <div class="bg-image img5"></div>
+    <div class="bg-image img6"></div>
+ 
+    <!-- Text overlay -->
+    <div class="bg-text">Safety First</div>
+ 
+    <!-- Hero slider (Slick carousel, sits above the background images) -->
+    <div class="hero-slider">
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+    </div>
+ 
+    <!-- jQuery (required for Slick + the background cycling script) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick Slider JS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+ 
+    <script>
+        // Show the first background image initially
+        $('.bg-image.img1').css('opacity', '1');
+ 
+        // Function to change background image every 5 seconds
+        let index = 1;
+        setInterval(function() {
+            // Hide all images
+            $('.bg-image').css('opacity', '0');
+            // Show the next image in sequence
+            $(`.bg-image.img${index}`).css('opacity', '1');
+            index++;
+            if (index > 6) index = 1; // Reset index after the last image
+        }, 5000); // Change image every 5 seconds
+    </script>
+ 
+    <!-- Initialize Hero Slider -->
+    <script>
+        $(document).ready(function(){
+            $('.hero-slider').slick({
+                dots: true,
+                arrows: true,
+                autoplay: true,
+                autoplaySpeed: 3000
+            });
+        });
+    </script>
+ 
+</body>
+</html>
+ 
