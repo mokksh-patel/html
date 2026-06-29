@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHG General Trading Co. LLC</title>
+ 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ 
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+ 
+    <!-- Custom Styles -->
+    <style>
+    * {box-sizing: border-box;}
+ 
+.col-sm-3 {
+  position: relative;
+  width: 50%;
+  max-width: 300px;
+}
+ 
+.image {
+  display: block;
+  width: 90%;
+  height: auto;
+}
+ 
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  transition: .5s ease;
+  opacity: 0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+ 
+.col-sm-3:hover .overlay {
+  opacity: 1;
+}
+ 
+        /* General Styles */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+ 
+        /* Navbar */
+        #navbar {
+            background-color: #333;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            text-align: left;
+        }
+ 
+        #navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+ 
+        #navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+ 
+        #navbar img {
+            float: left;
+            margin-left: 20px;
+            margin-top: 10px;
+            max-width: 100px;
+        }
+ 
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+ 
+        .hero-content {
+            z-index: 1;
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+ 
+        .hero-content h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+ 
+        .hero-content h3 {
+ 
+        }
+ 
+        .hero-content a {
+            display: inline-block;
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+ 
+        /* About Section */
+        .about {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+ 
+        .about h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+ 
+        .about p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+ 
+        .about a {
+            display: inline-block;
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+ 
+        /* Features Section */
+        .features {
+            padding: 50px 0;
+            text-align: center;
+        }
+ 
+        .feature-item {
+            margin-bottom: 30px;
+        }
+ 
+        .feature-item img {
+            max-width: 100px;
+            margin-bottom: 20px;
+        }
+ 
+        .feature-item p {
+            font-size: 1.2em;
+            color: red;
+        }
+ 
+        /* Statistics Section */
+        .statistics {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+ 
+        .statistics .stat-item {
+            padding: 20px;
+        }
+ 
+        .statistics .stat-item p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+ 
+        .statistics .stat-item i {
+            font-size: 3em;
+            color: red;
+        }
+ 
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+ 
+        footer p {
+            margin: 10px 0;
+        }
+ 
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+ 
+        footer a:hover {
+            color: red;
+        }
+ 
+        /* Responsive Adjustments */
+        @media screen and (max-width: 600px) {
+            .hero-content h1 {
+                font-size: 2.5em;
+            }
+ 
+            .hero-content h3 {
+                font-size: 1.5em;
+            }
+ 
+            .about h2 {
+                font-size: 2em;
+            }
+ 
+            .about p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+ 
+    <!-- Navbar -->
+    <div id="navbar">
+        <img src="https://areinfotech.in/ARE-Projects/phg-general-llc/assets/images/phg-general-trading-logo.png" alt="PHG General Trading Co. LLC">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#features">product+</a>
+        <a href="#statistics">Statistics</a>
+        <a href="#footer">Contact Us</a>
+    </div>
+ 
+    <!-- Hero Section -->
+    <section class="hero" style="background-image: url('https://img.freepik.com/premium-photo/hard-hat-safety-goggles-construction-site_1007506-37071.jpg?w=996');">
+        <div class="hero-content">
+            <h1>Welcome to PHG General Trading Co. LLC</h1>
+            <a href="https://areinfotech.in/ARE-Projects/phg-general-llc/#" class="btn">Learn More</a>
+        </div>
+    </section>
+ 
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>PHG General Trading Co. LLC is registered under the Companies Act of UAE, with its corporate office in Dubai, UAE. We specialize in marketing high-quality products manufactured through our own facilities and those of our associates. Our advanced technology and dedication to accuracy and speed set us apart.</p>
+            <a href="https://areinfotech.in/ARE-Projects/phg-general-llc/#" class="btn">Read More</a>
+        </div>
+    </section>
+ 
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2><b style="color:red">Our</b> Features</h2>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="feature-item">
+                        <img src="https://www.gamorgan.in/img/home_manufacture.svg" alt="Great Support">
+                        <p>Great Support</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="feature-item">
+                        <img src="https://www.abdullabinzayed.com/gallery/pipe-01-ts1642507185.svg" alt="Great Support">
+                        <p>Great Support</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="feature-item">
+                        <img src="https://reports.shell.com/investors-handbook/2019/pics/files/kf_icon_lng_plant_en.svg" alt="Quality Materials">
+                        <p>Quality Materials</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="feature-item">
+                        <img src="https://forestbiofacts.com/wp-content/uploads/2020/01/process-controll_800x600-1-300x300.jpg" alt="Unique Technology">
+                        <p>Unique Technology</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 col-sm-offset-0">
+                    <div class="feature-item">
+                        <img src="https://forestbiofacts.com/wp-content/uploads/2020/01/risk_safety_800x600-1.jpg" alt="Awesome Team">
+                        <p>Awesome Team</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Products Section -->
+    <section id="our-products" class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <img src="https://www.isrmag.com/wp-content/uploads/2018/05/Is-It-Safe-to-Buy-Used-Safety-Equipment.jpg" alt="Avatar" class="image">
+                    <div class="overlay">safty products</div>
+                </div>
+                <div class="col-sm-3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW_rhLqpWIEeXxCIfd1fxhtharsCYlMWB61-3V16PuykqiJCgXlNE1N6dEj6gsLdA9gYk&usqp=CAU" alt="Avatar" class="image">
+                    <div class="overlay">packaging</div>
+                </div>
+                <div class="col-sm-3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrgO15uGCpfjh_SSKwvgwhD7_6tzENiOkJgg&s" alt="Avatar" class="image">
+                    <div class="overlay">work wear</div>
+                </div>
+                <div class="col-sm-3">
+                    <img src="https://www.researchdive.com/blogImages/WaujpzMqqm.jpeg" alt="Avatar" class="image">
+                    <div class="overlay">abbrasive</div>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Statistics Section -->
+    <section id="statistics" class="statistics">
+        <div class="container">
+            <h2>Our <b style="color:red">Statistics</b></h2>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="stat-item">
+                        <i class="fa fa-globe"></i>
+                        <p>8+ Year Of Experience</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="stat-item">
+                        <i class="fa fa-globe"></i>
+                        <p>320+ HAPPT CLIENT</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="stat-item">
+                        <i class="fa fa-globe"></i>
+                        <p>40+Total Products</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="stat-item">
+                        <i class="fa fa-trophy"></i>
+                        <p>10+ Awards Won</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="stat-item">
+                        <i class="fa fa-users"></i>
+                        <p>852+ Satisfied Customers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Footer Section -->
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; 2024 PHG General Trading Co. LLC. All Rights Reserved.</p>
+            <p>Address: Dubai UAE.</p>
+            <p>Phone: +971 (50) 601-6453</p>
+            <p>Email: info@phgtrading.com</p>
+            <div>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+                <a href="#" class="fa fa-instagram"></a>
+            </div>
+        </div>
+    </footer>
+ 
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ 
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ 
+    <!-- Slick Slider JS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+ 
+    <!-- Custom Script -->
+    <script>
+        // Add your custom JavaScript here, if needed
+    </script>
+ 
+</body>
+</html>
+ 
